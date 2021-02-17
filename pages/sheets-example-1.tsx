@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { useSession } from 'next-auth/client';
 import useSheets from 'hooks/useSheets';
 import useSWR from 'swr';

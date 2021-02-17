@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { GetServerSideProps } from 'next';
-import Layout from '@components/layout';
+import Layout from '@components/Layout';
 import { CursusUser } from '@interfaces/Cursus';
 import { API_URL, CAMPUS_ID, CURSUS_ID } from '@utils/constants';
 import { getToken } from '@lib/clientCredentials';

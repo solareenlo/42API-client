@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import useSWR, { useSWRInfinite } from 'swr';
 import Link from 'next/link';
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import AccessDenied from '../components/access-denied'
 import { CursusUser } from '@interfaces/Cursus';
 import ViewSource from '../components/view-source';

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/client'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import AccessDenied from '../components/access-denied'
 import { getProviders } from 'next-auth/client';
 
