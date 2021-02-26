@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useSession } from 'next-auth/client'
 import { useRouter } from 'next/router';
-import useSWR, { useSWRInfinite } from 'swr';
+import useSWR from 'swr';
+import { useSWRInfinite } from 'swr';
 import Link from 'next/link';
 
 import Layout from '../components/Layout'
@@ -134,6 +135,7 @@ function Page ({pageIndex}: { pageIndex: number }) {
   )
 }
 
+// @ts-ignore
 function ApiExamplesPage2 () {
   const [session, loading] = useSession();
   const [pageIndex, setPageIndex] = useState(1);

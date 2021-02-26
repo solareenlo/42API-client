@@ -33,6 +33,6 @@ function PatternsPage() {
       </div>
     </Layout>
   );
-} 
+}
 
 export default PatternsPage;

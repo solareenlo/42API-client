@@ -14,7 +14,7 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: underline;
-} */
+}
 
 hr {
   @apply mt-10;

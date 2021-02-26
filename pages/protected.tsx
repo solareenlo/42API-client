@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/client'
 import Layout from '../components/Layout'
 import AccessDenied from '../components/access-denied'
-import { getProviders } from 'next-auth/client';
+// import { getProviders } from 'next-auth/client';
 
 export default function Page() {
   const [ session, loading ] = useSession()

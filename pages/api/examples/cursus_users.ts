@@ -13,23 +13,23 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (!session) {
       throw new Error('You must be sign in to view the protected content on this page.')
     }
-  
-    const token = await jwt.getToken({ req, secret }); 
+
+    const token = await jwt.getToken({ req, secret });
     if (!token) {
       throw new Error('JWT token is not available.');
     }
-  
+
     let page = parseInt(req.query.page as string) || 1;
     if (page < 1) page = 1;
     const size = parseInt(req.query.limit as string) || 100;
-  
+
     const endpoint = `${API_URL}/v2/cursus/${CURSUS_ID}/cursus_users`;
-    const url = endpoint + 
+    const url = endpoint +
       `?filter[campus_id]=${CAMPUS_ID}` +
       `&sort=-blackholed_at` +
       `&page[size]=${size}` +
       `&page[number]=${page}`;
-  
+
     const ftRes = await fetch(url, {
       method: 'GET',
       headers: {
@@ -41,13 +41,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (ftRes.status !== 200) {
       throw new Error('Failed to fetch API');
     }
-  
+
     const cursusUsers: CursusUser[] = await ftRes.json();
-    const xPage = parseInt(ftRes.headers.get('x-page') as string);
-    const xPerPage = parseInt(ftRes.headers.get('x-per-page') as string);
-    const xTotal = parseInt(ftRes.headers.get('x-total') as string);
-    const xPageTotal = Math.ceil(xTotal / xPerPage);
-    
+    // const xPage = parseInt(ftRes.headers.get('x-page') as string);
+    // const xPerPage = parseInt(ftRes.headers.get('x-per-page') as string);
+    // const xTotal = parseInt(ftRes.headers.get('x-total') as string);
+    // const xPageTotal = Math.ceil(xTotal / xPerPage);
+
     res.status(200).json(cursusUsers);
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message });
