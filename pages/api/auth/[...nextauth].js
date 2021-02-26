@@ -16,7 +16,7 @@ const options = {
   //
   // Notes:
   // * You must to install an appropriate node_module for your database
-  // * The Email provider requires a database (OAuth providers do not)  
+  // * The Email provider requires a database (OAuth providers do not)
   // database: process.env.DATABASE_URL,
 
   // The secret should be set to a reasonably long random string.
@@ -28,14 +28,14 @@ const options = {
     // Use JSON Web Tokens for session instead of database sessions.
     // This option can be used with or without a database for users/accounts.
     // Note: `jwt` is automatically set to `true` if no database is specified.
-    jwt: true, 
-    
+    jwt: true,
+
     // Seconds - How long until an idle session expires and is no longer valid.
     // maxAge: 30 * 24 * 60 * 60, // 30 days
 
     // Seconds - Throttle how frequently to write to database to extend a session.
     // Use it to limit write operations. Set to 0 to always update the database.
-    // Note: This option is ignored if using JSON Web Tokens 
+    // Note: This option is ignored if using JSON Web Tokens
     // updateAge: 24 * 60 * 60, // 24 hours
   },
 
@@ -44,8 +44,8 @@ const options = {
   // https://next-auth.js.org/configuration/options#jwt
   jwt: {
     // A secret to use for key generation (you should set this explicitly)
-    // secret: 'INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw', 
-    
+    // secret: 'INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw',
+
     // Set to true to use encryption (default: false)
     // encryption: true,
 
@@ -69,7 +69,7 @@ const options = {
 
   // Callbacks are asynchronous functions you can use to control what happens
   // when an action is performed.
-  callbacks: { 
+  callbacks: {
     signIn: async (user, account, profile) => {
       // console.log('SIGNIN CALLBACK...');
       const isAllowedToSignIn = profile ? true : false;
@@ -122,7 +122,7 @@ const options = {
       // https://github.com/nextauthjs/next-auth/issues/371
       if (ftTokenIsExpired(token.expiresAt)) {
         // console.log('ACCESS TOKEN IS EXPIRED');
-        
+
         const newToken = await ftTokenRefresh(
           token.accessToken,
           token.refreshToken,
