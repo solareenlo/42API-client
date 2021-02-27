@@ -47,7 +47,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // const xPerPage = parseInt(ftRes.headers.get('x-per-page') as string);
     // const xTotal = parseInt(ftRes.headers.get('x-total') as string);
     // const xPageTotal = Math.ceil(xTotal / xPerPage);
-
     res.status(200).json(cursusUsers);
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message });
