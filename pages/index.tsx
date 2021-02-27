@@ -1,4 +1,4 @@
-import Layout from '@components/Layout';
+import Layout from '@components/layout';
 import ViewSource from '../components/view-source';
 
 function IndexPage() {

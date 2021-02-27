@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { CursusUser } from '@interfaces/Cursus';
-import Layout from '@components/Layout';
+import Layout from '@components/layout';
 
 type Props = {
   items: CursusUser[];

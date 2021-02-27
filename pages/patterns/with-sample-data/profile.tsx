@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 
 import Link from 'next/link';
 import { Profile } from '@interfaces/User';
-import Layout from '@components/Layout';
+import Layout from '@components/layout';
 
 type Props = {
   profile: Profile;
