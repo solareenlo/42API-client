@@ -8,7 +8,7 @@ import { User } from '@interfaces/User';
 import { CursusUser } from '@interfaces/Cursus';
 import ViewSource from '../components/view-source';
 import { PAGE_SIZE } from '../utils/constants'
-import { API_URL, CURSUS_ID, CAMPUS_ID } from 'utils/constants'
+import { API_URL, CURSUS_ID, CAMPUS_ID } from '../utils/constants'
 
 function getKey(pageIndex, previousPageData) {
   if (previousPageData && !previousPageData.length) return null;
@@ -56,6 +56,7 @@ function ApiExamplePage() {
                       className="object-cover h-24 w-24"
                       src={`https://cdn.intra.42.fr/users/small_${user.login}.jpg`}
                       alt={`${user.login}`}
+                      onError={(e) => {e.target.src = `https://cdn.intra.42.fr/users/small_default.jpg`}}
                     />
                   </div>
                   <div>
