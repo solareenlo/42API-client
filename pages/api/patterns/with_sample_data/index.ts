@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { sampleCursusUsers } from '@sample-data-example';
+import { sampleCursusUsers } from '@sample-data/sample-data-example';
 import { CursusUser } from '@interfaces/Cursus';
 
 // Pretended Server Side Props
