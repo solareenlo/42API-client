@@ -39,7 +39,7 @@ function ApiExamplePage() {
         <ViewSource pathname=''/>
       </div>
       <div className="mb-8">
-        <h1 className="font-semibold text-2xl">42APIテスト2</h1>
+        <h1 className="font-semibold text-2xl">42APIテスト3</h1>
         <p className="text-sm"><em>/v2/cursus/21/cursus_users?filter[campus_id]=26&sort=-blackholed_at</em></p>
       </div>
       <div className="w-full">
@@ -57,6 +57,7 @@ function ApiExamplePage() {
                   </div>
                   <div>
                     <p>ログイン: {cursusUser.user.login}</p>
+                    <p>ID: {cursusUser.id}</p>
                     <p>経験値: {cursusUser.level}</p>
                     <p>開始日: {cursusUser.begin_at?.split('T')[0]}</p>
                     <Link href={`https://profile.intra.42.fr/users/${cursusUser.user.login}`}>
