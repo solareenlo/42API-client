@@ -5,6 +5,7 @@ import { getSession } from 'next-auth/client';
 import { API_URL, CURSUS_ID, CAMPUS_ID } from 'utils/constants'
 import { CursusUser } from '@interfaces/Cursus';
 import { Profile } from '@interfaces/User';
+import { PAGE_SIZE } from '../../../utils/constants'
 
 const secret = process.env.SECRET;
 
@@ -22,7 +23,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     let page = parseInt(req.query.page as string) || 1;
     if (page < 1) page = 1;
-    const size = parseInt(req.query.limit as string) || 100;
+    const size = parseInt(req.query.limit as string) || PAGE_SIZE;
 
     const endpoint = `${API_URL}/v2/cursus/${CURSUS_ID}/cursus_users`;
     const url = endpoint +

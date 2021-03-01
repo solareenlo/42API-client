@@ -3,6 +3,7 @@ import jwt from 'next-auth/jwt';
 import { getSession } from 'next-auth/client';
 import { API_URL, CURSUS_ID, CAMPUS_ID } from 'utils/constants'
 import { User } from '@interfaces/User';
+import { PAGE_SIZE } from '../../../utils/constants'
 
 const secret = process.env.SECRET;
 
@@ -20,7 +21,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     let page = parseInt(req.query.page as string) || 1;
     if (page < 1) page = 1;
-    const size = parseInt(req.query.limit as string) || 100;
+    const size = parseInt(req.query.limit as string) || PAGE_SIZE;
 
     const endpoint = `${API_URL}/v2/campus/${CAMPUS_ID}/users`;
     const url = endpoint +
