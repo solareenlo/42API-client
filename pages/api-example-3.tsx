@@ -16,8 +16,8 @@ function getKey(pageIndex, previousPageData) {
   return `/api/examples/users?page=${pageIndex + 1}&limit=${PAGE_SIZE}`;
 }
 
-function isValidCursusUser(user: User) {
-  return user.login.indexOf("3b3") && !user.login.includes('unko');
+function isValidUser(user: User) {
+  return !user.login.includes('3b3-') && !user.login.includes('unko');
 }
 
 function ApiExamplePage() {
@@ -48,7 +48,8 @@ function ApiExamplePage() {
         <p>{isEmpty ? <p>No users found.</p> : null}</p>
         <ul className="flex flex-wrap space-y-4">
           {users.map((user) => (
-            isValidCursusUser(user) && <>
+            isValidUser(user) &&
+            <>
               <li key={user.id} className="w-1/2">
                 <div className="flex flex-row space-x-4">
                   <div className="relative h-24 w-24">
@@ -60,7 +61,6 @@ function ApiExamplePage() {
                     />
                   </div>
                   <div>
-                    <p>ログイン: {user.login}</p>
                     <p>ID: {user.id}</p>
                     <p>login: {user.login}</p>
                     <Link href={`https://profile.intra.42.fr/users/${user.login}`}>
