@@ -17,7 +17,7 @@ function getKey(pageIndex, previousPageData) {
 }
 
 function isValidCursusUser(user: User) {
-  return !user.login.includes('unko');
+  return user.login.indexOf("3b3") && !user.login.includes('unko');
 }
 
 function ApiExamplePage() {
