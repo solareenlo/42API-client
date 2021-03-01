@@ -15,7 +15,7 @@ function getKey(pageIndex, previousPageData) {
 }
 
 function isValidCursusUser(cursusUser: CursusUser) {
-  return cursusUser.blackholed_at && !cursusUser.user.login.includes('unko');
+  return cursusUser.blackholed_at && !cursusUser.user.login.includes('3b3-') && !cursusUser.user.login.includes('unko');
 }
 
 function ApiExamplePage() {
@@ -53,6 +53,8 @@ function ApiExamplePage() {
                     <img
                       className="object-cover h-24 w-24"
                       src={`https://cdn.intra.42.fr/users/small_${cursusUser.user.login}.jpg`}
+                      alt={`${cursusUser.user.login}`}
+                      onError={(e) => {e.target.src = `https://cdn.intra.42.fr/users/small_default.jpg`}}
                     />
                   </div>
                   <div>
