@@ -49,7 +49,8 @@ function Header() {
           <li className={styles.navItem}><ActiveLink href="/"><a>Home</a></ActiveLink></li>
           <li className={styles.navItem}><ActiveLink href="/api-example-1"><a>API1</a></ActiveLink></li>
           <li className={styles.navItem}><ActiveLink href="/api-example-2"><a>API2</a></ActiveLink></li>
-          <li className={styles.navItem}><ActiveLink href="/api-example-3"><a>users</a></ActiveLink></li>
+          <li className={styles.navItem}><ActiveLink href="/api-example-3"><a>user</a></ActiveLink></li>
+          <li className={styles.navItem}><ActiveLink href="/api-example-4"><a>profile</a></ActiveLink></li>
           <li className={styles.navItem}><ActiveLink href="/sheets-example-1"><a>Sheets1</a></ActiveLink></li>
           <li className={styles.navItem}><ActiveLink href="/patterns"><a>Patterns</a></ActiveLink></li>
         </ul>

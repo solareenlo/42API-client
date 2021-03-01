@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import AccessDenied from '../components/access-denied';
 import { User } from '@interfaces/User';
-import { CursusUser } from '@interfaces/Cursus';
 import ViewSource from '../components/view-source';
 import { PAGE_SIZE } from '../utils/constants'
 import { API_URL, CURSUS_ID, CAMPUS_ID } from '../utils/constants'

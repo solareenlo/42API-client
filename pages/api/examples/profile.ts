@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
 import jwt from 'next-auth/jwt';
 import { getSession } from 'next-auth/client';
 import { API_URL } from 'utils/constants'
+import { Profile } from '@interfaces/User';
 const secret = process.env.SECRET;
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -17,11 +17,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       throw new Error('JWT token is not available.');
     }
 
-    // console.log(req.query);
+    const name = (req.query.name as string) || "test";
+    const url = `${API_URL}/v2/users/${name}`;
+    console.log(url);
 
-    // TODO: token expired?
-    const endpoint = `${API_URL}/v2/${req.query.endpoint}`;
-    const ftRes = await fetch(endpoint, {
+    const ftRes = await fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -29,13 +29,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
 
+    console.log(ftRes.status);
     if (ftRes.status !== 200) {
       throw new Error('Failed to fetch API');
     }
 
     const json = await ftRes.json();
     res.send(JSON.stringify(json, null, 2));
-
   } catch (err) {
     res.send({ message: err.message });
   }
