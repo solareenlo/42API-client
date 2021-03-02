@@ -43,7 +43,11 @@ type Props = {
 };
 
 function isValidCursusUser(cursusUser: CursusUser) {
-  return cursusUser.blackholed_at && !cursusUser.user.login.includes('3b3-') && !cursusUser.user.login.includes('unko');
+  return cursusUser.blackholed_at
+    && !cursusUser.user.login.includes('3b3-')
+    && !cursusUser.user.login.includes('unko')
+    && !cursusUser.user.login.includes('aaaaaa')
+    && !cursusUser.user.login.includes('test');
 }
 
 const IndexWithClientCredentials = ({ items, page }: Props) => (

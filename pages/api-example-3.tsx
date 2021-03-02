@@ -16,7 +16,10 @@ function getKey(pageIndex, previousPageData) {
 }
 
 function isValidUser(user: User) {
-  return !user.login.includes('3b3-') && !user.login.includes('unko');
+  return !user.login.includes('3b3-')
+    && !user.login.includes('unko')
+    && !user.login.includes('aaaaaa')
+    && !user.login.includes('test');
 }
 
 function ApiExamplePage() {
