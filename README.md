@@ -47,3 +47,24 @@ https://api.intra.42.fr/v2/cursus/21/projects?sort=id
 | 1345 | CPP Module 07    | cpp-module-07          |
 | 1346 | CPP Module 08    | cpp-module-08          |
 | 1379 | ft_hangouts      | 42cursus-ft_hangouts   |
+
+
+### API の概要
+
+| API                                              | 概要                                 |
+|--------------------------------------------------|--------------------------------------|
+| cursus_users/graph/on/created_at/by/day          | 1日のユーザー作成数                  |
+| cursus_users?filter[campus_id]=26                | 42 の 26campus のユーザーの概要      |
+| users/70782/cursus_users                         | ユーザーのレベルの概要               |
+| cursus/21/cursus_users?filter[campus_id]=26      | 42cursus の 26campus ユーザーの概要  |
+| projects/1314/projects_users?filter[campus]=26   | 26campus の 1314project の状況       |
+| users/70782/projects_users                       | 70782ユーザーの project の詳細       |
+| projects/1314/users?filter[primary_campus_id]=26 | 26campus の 1314project を受けた一覧 |
+
+### Projects users
+```sh
+projects/1314/projects_users/graph/on/created_at/by/day
+users/70782/projects_users/graph/on/created_at/by/day
+projects_users/graph/on/created_at/by/day
+projects_users?filter[campus]=26
+```
