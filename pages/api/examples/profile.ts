@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'next-auth/jwt';
 import { getSession } from 'next-auth/client';
 import { API_URL } from 'utils/constants'
-import { Profile } from '@interfaces/User';
 const secret = process.env.SECRET;
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {

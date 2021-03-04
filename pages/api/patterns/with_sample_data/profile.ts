@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { sampleUser } from '@sample-data-example';
+import { sampleUser } from '@sample-data/sample-data-example';
 import { Profile } from '@interfaces/User';
 
 // Pretend Sample User

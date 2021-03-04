@@ -58,7 +58,9 @@ function ApiExamplePage() {
                       className="object-cover h-24 w-24"
                       src={`https://cdn.intra.42.fr/users/small_${cursusUser.user.login}.jpg`}
                       alt={`${cursusUser.user.login}`}
-                      onError={(e) => {e.target.src = `https://cdn.intra.42.fr/users/small_default.jpg`}}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://cdn.intra.42.fr/users/small_default.jpg`
+                      }}
                     />
                   </div>
                   <div>

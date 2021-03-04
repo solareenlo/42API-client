@@ -1,7 +1,6 @@
 import { useSession } from 'next-auth/client'
 import useSWR from 'swr'
 import Layout from '../components/layout'
-import { useState } from 'react';
 import ViewSource from 'components/view-source';
 import AccessDenied from '../components/access-denied';
 import { Profile } from '@interfaces/User';
@@ -14,7 +13,7 @@ function ApiExamplesPage() {
 
   const { data, error } = useSWR(`/api/examples/profile?name=${session.user.name}`);
   const profiles: Profile[] = data ? [].concat(data) : [];
-  const isEmpty = profiles?.[0]?.length === 0;
+  const isEmpty = profiles?.length === 0;
 
   return (
     <Layout>
@@ -27,6 +26,7 @@ function ApiExamplesPage() {
       </div>
       <p>{isEmpty ? <p>No users found.</p> : null}</p>
       {profiles.map((profile) => (
+        !error &&
         <>
         <div>
           id: {profile.id}

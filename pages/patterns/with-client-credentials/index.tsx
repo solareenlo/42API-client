@@ -71,7 +71,9 @@ const IndexWithClientCredentials = ({ items, page }: Props) => (
                   className="object-cover h-32 w-32"
                   src={`https://cdn.intra.42.fr/users/small_${item.user.login}.jpg`}
                   alt={`${item.user.login}`}
-                  onError={(e) => {e.target.src = `https://cdn.intra.42.fr/users/small_default.jpg`}}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = `https://cdn.intra.42.fr/users/small_default.jpg`
+                  }}
                 />
               </div>
               <div>

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'next-auth/jwt';
 import { getSession } from 'next-auth/client';
-import { API_URL, CURSUS_ID, CAMPUS_ID } from 'utils/constants'
+import { API_URL, CAMPUS_ID } from 'utils/constants'
 import { User } from '@interfaces/User';
 import { PAGE_SIZE } from '../../../utils/constants'
 
