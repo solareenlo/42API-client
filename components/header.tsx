@@ -19,7 +19,7 @@ function Header() {
               className={styles.buttonPrimary}
               onClick={(e) => {
                 e.preventDefault()
-                signIn('42')
+                signIn()
               }}
             >
               ログイン
