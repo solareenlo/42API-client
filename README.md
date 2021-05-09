@@ -9,6 +9,13 @@ This was built for fun only.
 - Data fetching using SWR
 - Data fetching using Google Sheets hook
 
+### Campus ID
+
+| ID | Campus |
+|----|--------|
+| 1  | Paris  |
+| 26 | Tokyo  |
+
 ### Projects ID
 
 ```sh
