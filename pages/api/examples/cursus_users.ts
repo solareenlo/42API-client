@@ -28,7 +28,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const url = endpoint +
       `?filter[campus_id]=${CAMPUS_ID}` +
       `&sort=-blackholed_at` +
-      `&range[blackholed_at]=2021-03-02,2023-12-31` +
+      `&range[blackholed_at]=2021-06-16,2024-12-31` +
       `&page[size]=${size}` +
       `&page[number]=${page}`;
 
